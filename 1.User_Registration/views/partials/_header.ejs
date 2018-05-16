@@ -1,0 +1,10 @@
+<title>TinyApp</title>
+<% if(user === undefined) {%>
+  <a href="/login">Login</a>
+  <a href="/register">register</a>
+<% } else {%>
+  <div><p><%=user.id%></p></div>
+  <form action="/logout" method="POST">
+    <input type="submit" value="Logout">
+  </form>
+<% } %>

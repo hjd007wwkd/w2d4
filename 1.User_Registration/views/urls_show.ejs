@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/_header %>
+</head>
+<body>
+  <form action="/urls/<%=shortURL%>" method="POST">
+    <h2>shortURL: <%=shortURL%></h2>
+    <input type="text" name="updatedURL" value="<%= url %>">
+    <input type="submit" value="Update">
+  </form>
+</body>
+</html>

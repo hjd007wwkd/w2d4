@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/_header %>
+</head>
+<body>
+  <% if(user !== undefined) {%>
+    <button><a href="/urls/new">Register New URL</a></button>
+  <% } else {%>
+  <% for(var url in urls){ %>
+    <li><%= url %> -> <a href="/u/<%=url%>"><%=urls[url]%></a></li>
+    <button><a href="/urls/<%=url%>">Edit</a></button>
+    <form action="/urls/<%=url%>/delete" method="POST">
+      <input type="submit" value="Delete">
+    </form>
+  <% } %>
+</body>
+</html>
